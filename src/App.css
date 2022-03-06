@@ -1,38 +1,480 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #f0f2f5;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: white;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0 30px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.navbar_first {
+  width: 25%;
+  display: flex;
+  align-items: center;
+}
+.navbar_logo {
+  width: 20%;
+}
+.navbar_fb_logo {
+  font-size: 40px;
+  color: #0d8cf1;
+  cursor: pointer;
+}
+.navbar_search {
+  width: 80%;
+  position: relative;
+}
+.navbar_search_logo {
+  position: absolute;
+  color: silver;
+  left: 20px;
+  top: 12px;
+  font-size: 20px;
+}
+.navbar_searchbar {
+  width: 100%;
+  padding: 15px 45px;
+  border: none;
+  background-color: #f0f2f5;
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+}
+.navbar_middle {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 70px;
+}
+.Icons {
+  font-size: 25px;
+  color: #606770;
+  cursor: pointer;
+}
+.middle_Icon {
+  display: inline-block;
+  position: relative;
+}
+.navbar_notify {
+  display: flex;
+
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #f1327b;
+  border-radius: 50%;
+  top: -13px;
+  left: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  color: white;
+  cursor: pointer;
+}
+.navbar_last {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+.navbar_last_Icon {
+  margin: 0 15px;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background: #f0f2f5;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.facebook {
+  display: flex;
+  margin-top: 70px;
+}
+.sidebar {
+  width: 25%;
+  position: fixed;
+  top: 90px;
+}
+.sidebar_list {
+  display: flex;
+  padding: 10px 30px;
+  align-items: center;
+  cursor: pointer;
+}
+.sidebar_img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.sidebar_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sidebar_name {
+  margin-left: 12px;
+}
+.posts {
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 50px;
+}
+.stories {
+  width: 100%;
+  display: flex;
+}
+.stories_col {
+  width: 25%;
+}
+.stories_body {
+  height: 200px;
+  padding: 0 10px;
+  position: relative;
+}
+.stories_body img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.stories_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.stories_overlay_img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-left: 20px;
+  border: 3px solid #0d8cf1;
+}
+.stories_overlay_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.stories_body_name {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
   color: white;
+  font-size: 13px;
 }
-
-.App-link {
-  color: #61dafb;
+.create {
+  width: 80%;
+  background: white;
+  padding: 15px;
+  margin: 15px auto;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
+.create_first {
+  display: flex;
+  width: 100%;
+}
+.create_img {
+  width: 20%;
+}
+.create_img span {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.create_img span img {
+  width: 100%;
+  height: 100%;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  object-fit: cover;
+}
+.create_input {
+  width: 80%;
+}
+.create_search {
+  background-color: #f0f2f5;
+  width: 100%;
+  padding: 15px 20px;
+
+  border-radius: 30px;
+  border: none;
+  outline: none;
+}
+.create_second {
+  width: 100%;
+  border: 1px solid #f0f2f5;
+  margin-top: 10px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.create_second_icon {
+  display: flex;
+  align-items: centers;
+}
+.text {
+  margin-left: 8px;
+}
+.redColor {
+  color: #fc3dc2;
+  font-size: 23px;
+}
+.greenColor {
+  color: #10a70b;
+  font-size: 23px;
+}
+.orangeColor {
+  color: #fcb93d;
+  font-size: 23px;
+}
+.show {
+  width: 80%;
+  margin: 15px auto;
+  background-color: white;
+
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  background: #f0f2f5;
+}
+.show_header {
+  display: flex;
+  align-items: center;
+}
+.show_img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.show_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.show_name {
+  margin-left: 12px;
+  font-weight: 600;
+}
+.date {
+  color: silver;
+  font-weight: 300;
+  font-size: 13px;
+}
+.show_body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.show_body_text {
+  width: 100%;
+  margin: 12px 0;
+}
+.show_body_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.show_reactions {
+  border-top: 1px solid #f0f2f5;
+  border-bottom: 1px solid #f0f2f5;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.reactions {
+  display: flex;
+  align-items: center;
+}
+.reactions_text {
+  display: inline-block;
+  margin-left: 5px;
+}
+.empty {
+  margin: 20px 0;
+  padding: 14px;
+  background-color: white;
+}
+.chatbar {
+  width: 25%;
+  position: fixed;
+  top: 100px;
+  right: 0;
+  overflow-y: scroll;
+}
+.chatbar_list {
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  cursor: pointer;
+}
+.chatbar_list_img {
+  width: 35px;
+  height: 35px;
+  position: relative;
+}
+.status {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  right: 0;
+  border: 1.5px solid #f0f2f5;
+}
+.chatbar_list_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.chatbar_list_name {
+  margin-left: 10px;
+  font-weight: 600;
+}
+.chat {
+  position: fixed;
+  bottom: 0;
+  right: 20%;
+
+  height: 450px;
+  min-height: 450px;
+  max-height: 450px;
+  background: #fff;
+  width: 330px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.chat_header {
+  display: flex;
+  padding: 15px;
+  border-bottom: 1px solid #f0f2f5;
+}
+.chat_first {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.chat_header_img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.chat_header_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.chat_header_name {
+  margin-left: 8px;
+  font-weight: 600;
+}
+.chat_second {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.chat_icons {
+  margin: 10px 5px;
+  color: silver;
+  cursor: pointer;
+}
+.chat_body {
+  padding: 14px;
+  font-size: 14px;
+}
+.chat_left {
+  display: flex;
+  justify-content: flex-start;
+}
+.chat_left p {
+  display: inline-block;
+  background: #f0f2f5;
+  padding: 7px;
+  color: #333;
+  border-radius: 6px;
+  margin-top: 6px;
+}
+.chat_right {
+  display: flex;
+  justify-content: flex-end;
+}
+.chat_right p {
+  display: inline-block;
+  background: #0d8cf1;
+  padding: 7px;
+  color: white;
+  border-radius: 6px;
+  margin-top: 6px;
+}
+.chat_footer {
+  position: fixed;
+  bottom: 4px;
+  width: 330px;
+}
+.chat_input {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 15px 13px;
+  background-color: #f0f2f5;
+}
+@media (max-width: 700px) {
+  .navbar_first {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .navbar_middle {
+    display: none;
+  }
+  .navbar_last {
+    display: none;
+  }
+  .sidebar_list {
+    display: none;
+  }
+  .stories_body {
+    display: none;
+  }
+  .create {
+    width: 100%;
+  }
+  .create_img {
+    display: none;
+  }
+  .create_search {
+    width: 90%;
+  }
+  .create_second {
+    display: none;
+  }
+  .posts {
+    width: 80%;
+  }
+  .create_ .chatbar {
+    display: none;
   }
 }
